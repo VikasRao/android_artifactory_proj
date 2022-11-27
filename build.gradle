@@ -36,6 +36,16 @@ allprojects {
             url 'https://jitpack.io'
         }
 
+        //For artifactor consumer
+        maven {
+            url "http://localhost:8082/artifactory/androidRepoTest"
+            credentials {
+                username = "admin"
+                password = "password"
+            }
+            allowInsecureProtocol = true
+        }
+
     }
 
 }
@@ -58,7 +68,7 @@ project('artifactory_jfrog_upload'){
     publishing {
         publications {
             app(MavenPublication) {
-                groupId = "com.acceptto.sdk"
+                groupId = "com.vik.sdk"
                 artifactId = "debug"
                 version = "1.0.0"
                 artifact("$buildDir/outputs/aar/artifactory_jfrog_upload-debug.aar")
