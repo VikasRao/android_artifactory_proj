@@ -1,0 +1,2 @@
+include ':artifactory_jfrog_upload'
+
