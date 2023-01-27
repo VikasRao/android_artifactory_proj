@@ -12,6 +12,8 @@
         android:layout_height="wrap_content"
         app:layout_constraintBottom_toTopOf="@id/button_first"
         app:layout_constraintEnd_toEndOf="parent"
+        android:textColor="@color/lib_red"
+        android:text="Hello how are you"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 

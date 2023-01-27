@@ -15,7 +15,7 @@ buildscript {
 
     }
     dependencies {
-        classpath 'com.android.tools.build:gradle:7.0.4'
+        classpath 'com.android.tools.build:gradle:7.4.0'
         classpath 'org.jetbrains.kotlin:kotlin-gradle-plugin:1.7.20'
         //extractor dependency
         classpath "org.jfrog.buildinfo:build-info-extractor-gradle:4.29.3"
@@ -38,7 +38,7 @@ allprojects {
 
         //For artifactor consumer
         maven {
-            url "http://localhost:8082/artifactory/androidRepoTest"
+            url "http://localhost:8082/artifactory/mevenRepo"
             credentials {
                 username = "admin"
                 password = "password"
@@ -54,7 +54,7 @@ artifactory {
     contextUrl = "http://localhost:8082/artifactory"
     publish {
         repository {
-            repoKey = "androidRepoTest"
+            repoKey = "mevenRepo"
             username = "admin"
             password = "password"
             maven = true
@@ -70,7 +70,7 @@ project('artifactory_jfrog_upload'){
             app(MavenPublication) {
                 groupId = "com.vik.sdk"
                 artifactId = "debug"
-                version = "1.0.0"
+                version = "1.0.1"
                 artifact("$buildDir/outputs/aar/artifactory_jfrog_upload-debug.aar")
 
             }
